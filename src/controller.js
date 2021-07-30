@@ -8,6 +8,7 @@ const validCommands = {
   report: (robot) => {
     const pos = robot.position();
     console.log(`${pos.x}, ${pos.y}, ${pos.facing}`);
+
   }
 };
 
@@ -32,12 +33,15 @@ const getValidCommands = (commands) => {
   return [];
 }
 
+// run valid command
+const runValidCommand = (robot, command) => {
+  const robotCommand = validCommands[command.command];
+  return robotCommand(robot, command.params)
+};
+
 // run all valid commands
 const runValidCommands = (commands) => {
-  commands.reduce((robot, command) => {
-    const robotCommand = validCommands[command.command];
-    return robotCommand(robot, command.params)
-  }, robotFactory(0, 0, 'north'));
+  commands.reduce(runValidCommand, robotFactory(0, 0, 'north'));
 }
 
 // from a list of commands - run them
