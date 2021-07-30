@@ -79,7 +79,7 @@ describe('robot', () => {
       [[2, 2, 'south'], [2, 1, 'south']],
       [[2, 2, 'west'],  [1, 2, 'west']],
     ];
-    test.each(testConditions)('robotFactory(%o).move()', (input, expected) => {
+    test.each(testConditions)('robotFactory(%j).move()', (input, expected) => {
       const robot = robotFactory(...input);
       const moved = robot.move();
 
@@ -87,7 +87,43 @@ describe('robot', () => {
       expect(moved.position().y).toEqual(expected[1]);
       expect(moved.position().facing).toEqual(expected[2]);
     })
+  });
 
+
+  // turn left
+  describe('turnLeft', () => {
+    const testConditions = [
+      [[2, 2, 'north'], [2, 2, 'west']],
+      [[2, 2, 'east'],  [2, 2, 'north']],
+      [[2, 2, 'south'], [2, 2, 'east']],
+      [[2, 2, 'west'],  [2, 2, 'south']],
+    ];
+    test.each(testConditions)('robotFactory(%j).turnLeft()', (input, expected) => {
+      const robot = robotFactory(...input);
+      const moved = robot.turnLeft();
+
+      expect(moved.position().x).toEqual(expected[0]);
+      expect(moved.position().y).toEqual(expected[1]);
+      expect(moved.position().facing).toEqual(expected[2]);
+    });
+  });
+
+  // turn right
+  describe('turnRight', () => {
+    const testConditions = [
+      [[2, 2, 'north'], [2, 2, 'east']],
+      [[2, 2, 'east'],  [2, 2, 'south']],
+      [[2, 2, 'south'], [2, 2, 'west']],
+      [[2, 2, 'west'],  [2, 2, 'north']],
+    ];
+    test.each(testConditions)('robotFactory(%j).turnRight()', (input, expected) => {
+      const robot = robotFactory(...input);
+      const moved = robot.turnRight();
+
+      expect(moved.position().x).toEqual(expected[0]);
+      expect(moved.position().y).toEqual(expected[1]);
+      expect(moved.position().facing).toEqual(expected[2]);
+    });
   });
 
 });
