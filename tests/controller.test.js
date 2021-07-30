@@ -70,8 +70,8 @@ describe('controller.run()', () => {
 
     controller.run(commands);
 
-    expect(mockLog).toHaveBeenCalledTimes(2);
-    expect(mockLog).toHaveBeenNthCalledWith(1, '0, 1, north');
+    expect(mockLog).toHaveBeenCalledTimes(4);
+    expect(mockLog).toHaveBeenNthCalledWith(3, 'REPORT: 0, 1, north');
     mockLog.mockRestore();
   });
 
@@ -109,9 +109,9 @@ describe('controller.run()', () => {
     controller.run(commands);
 
     expect(mockLog).toHaveBeenCalledTimes(4);
-    expect(mockLog).toHaveBeenNthCalledWith(1, '0, 1, north');
-    expect(mockLog).toHaveBeenNthCalledWith(2, '0, 0, west');
-    expect(mockLog).toHaveBeenNthCalledWith(3, '3, 3, north');
+    expect(mockLog).toHaveBeenNthCalledWith(1, 'REPORT: 0, 1, north');
+    expect(mockLog).toHaveBeenNthCalledWith(2, 'REPORT: 0, 0, west');
+    expect(mockLog).toHaveBeenNthCalledWith(3, 'REPORT: 3, 3, north');
     mockLog.mockRestore();
   });
 });

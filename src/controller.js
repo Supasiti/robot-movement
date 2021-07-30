@@ -1,14 +1,26 @@
 const robotFactory = require('../lib/robot');
 
 const validCommands = {
-  place: (robot, params) => robotFactory(params.x, params.y, params.facing), 
-  move: (robot) => robot.move(),
-  left: (robot) => robot.turnLeft(),
-  right: (robot) => robot.turnRight(), 
+  place: (robot, params) => {
+    console.log(`PLACE ${params.x}, ${params.y}, ${params.facing}`)
+    return robotFactory(params.x, params.y, params.facing); 
+  },
+  move: (robot) => {
+    console.log('MOVE');
+    return robot.move();
+  },
+  left: (robot) => {
+    console.log('LEFT');
+    return robot.turnLeft()
+  },
+  right: (robot) => {
+    console.log('RIGHT');
+    return robot.turnRight()
+  }, 
   report: (robot) => {
     const pos = robot.position();
-    console.log(`${pos.x}, ${pos.y}, ${pos.facing}`);
-
+    console.log(`REPORT: ${pos.x}, ${pos.y}, ${pos.facing}`);
+    return robot;
   }
 };
 
