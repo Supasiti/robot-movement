@@ -54,7 +54,7 @@ describe('controller.run()', () => {
   });
 
   //  work perfectly 
-  it ('should log a position of robot when correct commands are entered',
+  it ('should log a position of robot when correct commands are entered - 1',
     ()=> {
     const commands = [ 
       {
@@ -77,7 +77,7 @@ describe('controller.run()', () => {
 
 
   //  work perfectly 
-  it ('should log a position of robot when correct commands are entered',
+  it ('should log a position of robot when correct commands are entered - 2',
     ()=> {
     const commands = [ 
       {

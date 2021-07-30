@@ -21,7 +21,6 @@ const validatePlaceCommand = (command) => {
   return false;
 }
 
-
 // find the first valid place command and return the a subset of commands from it
 const getValidCommands = (commands) => {
   const firstValidPlace = commands.find(command => validatePlaceCommand(command));
@@ -33,9 +32,13 @@ const getValidCommands = (commands) => {
   return [];
 }
 
-// assume
-const getRobotCommand = (command) => validCommands[command.command]
-
+// run all valid commands
+const runValidCommands = (commands) => {
+  commands.reduce((robot, command) => {
+    const robotCommand = validCommands[command.command];
+    return robotCommand(robot, command.params)
+  }, robotFactory(0, 0, 'north'));
+}
 
 // from a list of commands - run them
 // will first look for a valid 'place' command before executing anything else
@@ -48,17 +51,11 @@ const getRobotCommand = (command) => validCommands[command.command]
 const controller = {
   run: (commands) => { 
     const validCommands = getValidCommands(commands);
-    if (validCommands){
-      validCommands.reduce((robot, command) => {
-        const robotCommand = getRobotCommand(command);
-        return robotCommand(robot, command.params);
-      }, robotFactory(0, 0, 'north'))
-    }
+    if (validCommands) runValidCommands(validCommands);
     console.log('Completed all valid commands!')
     return;
   }
 };
-
 
 
 module.exports = controller;

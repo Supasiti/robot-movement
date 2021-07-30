@@ -32,6 +32,7 @@ describe('robot', () => {
       
       expect(mock).toHaveBeenLastCalledWith('position must be between 0 and 4');
       expect(robot).toEqual(expected);
+      mock.mockRestore();
     })
 
     it('should log an error when input position is above 4', () => {
@@ -47,6 +48,7 @@ describe('robot', () => {
       
       expect(mock).toHaveBeenLastCalledWith('position must be between 0 and 4');
       expect(robot).toEqual(expected);
+      mock.mockRestore();
     })
 
     // when one of the position is outside 0 to 4
@@ -63,6 +65,7 @@ describe('robot', () => {
       
       expect(mock).toHaveBeenLastCalledWith('facing must be any string in this list [north, east, south, west]');
       expect(robot).toEqual(expected);
+      mock.mockRestore();
     });
 
   });
