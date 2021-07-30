@@ -33,7 +33,7 @@ describe('controller.run()', () => {
 
   //  no valid command after first valid place
   it ('should not run anything if there is no valid command after the first valid place command',
-    ()=> {
+    () => {
     const commands = [ 
       {
         command: 'place',
@@ -49,7 +49,7 @@ describe('controller.run()', () => {
 
     controller.run(commands);
 
-    expect(mockLog).toHaveBeenCalledTimes(1);
+    expect(mockLog).toHaveBeenCalledTimes(2);
     mockLog.mockRestore();
   });
 
@@ -108,10 +108,10 @@ describe('controller.run()', () => {
 
     controller.run(commands);
 
-    expect(mockLog).toHaveBeenCalledTimes(4);
-    expect(mockLog).toHaveBeenNthCalledWith(1, 'REPORT: 0, 1, north');
-    expect(mockLog).toHaveBeenNthCalledWith(2, 'REPORT: 0, 0, west');
-    expect(mockLog).toHaveBeenNthCalledWith(3, 'REPORT: 3, 3, north');
+    expect(mockLog).toHaveBeenCalledTimes(13);
+    expect(mockLog).toHaveBeenNthCalledWith(3, 'REPORT: 0, 1, north');
+    expect(mockLog).toHaveBeenNthCalledWith(6, 'REPORT: 0, 0, west');
+    expect(mockLog).toHaveBeenNthCalledWith(12, 'REPORT: 3, 3, north');
     mockLog.mockRestore();
   });
 });
