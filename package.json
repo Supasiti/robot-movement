@@ -1,0 +1,25 @@
+{
+  "name": "robot-movement",
+  "version": "1.0.0",
+  "description": "The application is a simulation of a toy robot moving on a square",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Supasiti/robot-movement.git"
+  },
+  "author": "Thara Supasiti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Supasiti/robot-movement/issues"
+  },
+  "homepage": "https://github.com/Supasiti/robot-movement#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
