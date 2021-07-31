@@ -88,7 +88,7 @@ Then run
     node index.js /relative_path_to/input.txt
 
 and follow all the prompts. The output will be printed on the screen
-Still confused? Follow a walkthrough [here]().
+Still confused? Follow a walkthrough [here](https://youtu.be/8h2MWKSXwrg).
 
 ## <h2 id="tests"> Tests </h2>
 [(Back to top)](#table-of-content)
@@ -101,7 +101,7 @@ Once the framework is downloaded, To test, run
 
     npm run test
 
-Follow a video instruction [here]();
+Follow a video instruction [here](https://youtu.be/xZ06UrFN0Do);
 
 
 ## <h2 id="license"> License </h2>
