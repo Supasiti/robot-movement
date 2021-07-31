@@ -48,6 +48,7 @@ The application will read all the commands from a `.txt` file and log all valid 
 - [Usage](#usage)
 - [Contribution Guidelines](#contribution)
 - [Tests](#tests)
+- [Future Features](#future)
 - [License](#license)
 
 
@@ -103,6 +104,12 @@ Once the framework is downloaded, To test, run
 
 Follow a video instruction [here](https://youtu.be/xZ06UrFN0Do);
 
+## <h2 id="future"> Future Features</h2>
+[(Back to top)](#table-of-content)
+
+It would be very cool if the following features are implemented:
+- graphical interface indicating where the robot is after each valid command; and
+- command line prompt, which would make it interactive.
 
 ## <h2 id="license"> License </h2>
 [(Back to top)](#table-of-content)
